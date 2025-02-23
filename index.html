@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Finance Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>AI Finance Manager</h1>
+    
+    <div class="container">
+        <h2>Add a Transaction</h2>
+        <input type="date" id="date">
+        <input type="text" id="category" placeholder="Category">
+        <input type="number" id="amount" placeholder="Amount">
+        <input type="text" id="description" placeholder="Description">
+        <button onclick="addTransaction()">Add Transaction</button>
+        
+        <h2>Transaction History</h2>
+        <ul id="transaction-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
