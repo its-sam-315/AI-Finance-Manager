@@ -7,20 +7,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>AI Finance Manager</h1>
-    
-    <div class="container">
-        <h2>Add a Transaction</h2>
-        <input type="date" id="date">
-        <input type="text" id="category" placeholder="Category">
-        <input type="number" id="amount" placeholder="Amount">
-        <input type="text" id="description" placeholder="Description">
-        <button onclick="addTransaction()">Add Transaction</button>
-        
-        <h2>Transaction History</h2>
+    <header>
+        <h1>AI-Powered Personal Finance Manager 💰</h1>
+    </header>
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#transactions">Transactions</a>
+        <a href="#budget">Budget</a>
+        <a href="#analytics">Analytics</a>
+    </nav>
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <p>Total Balance: $<span id="total-balance">0.00</span></p>
+    </section>
+    <section id="transactions">
+        <h2>Transactions</h2>
+        <form id="transaction-form">
+            <input type="text" id="description" placeholder="Enter Description" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <select id="category">
+                <option value="food">Food</option>
+                <option value="rent">Rent</option>
+                <option value="travel">Travel</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit">Add Transaction</button>
+        </form>
         <ul id="transaction-list"></ul>
-    </div>
-
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
