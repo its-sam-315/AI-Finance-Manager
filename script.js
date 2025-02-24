@@ -1,3 +1,5 @@
+const baseURL = "https://ai-finance-manager-d9k7.onrender.com";  // Live backend URL
+
 document.getElementById("transaction-form").addEventListener("submit", async function(event) {
     event.preventDefault();
 
@@ -14,7 +16,7 @@ document.getElementById("transaction-form").addEventListener("submit", async fun
     let transaction = { description, amount, type, category };
 
     // Send transaction to backend
-    const response = await fetch('/transactions', {
+    const response = await fetch(`${baseURL}/transactions`, {   // Updated URL
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(transaction)
@@ -30,7 +32,7 @@ document.getElementById("transaction-form").addEventListener("submit", async fun
 
 // Fetch transactions from backend
 async function fetchTransactions() {
-    const response = await fetch('/transactions');
+    const response = await fetch(`${baseURL}/transactions`);  // Updated URL
     const transactions = await response.json();
 
     let transactionList = document.getElementById("transaction-list");
